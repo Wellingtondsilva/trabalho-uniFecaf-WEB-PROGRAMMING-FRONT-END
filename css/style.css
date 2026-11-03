@@ -1,0 +1,331 @@
+/* ============================================================
+   RESET E VARIÁVEIS (Paleta Naruto)
+   ============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --naruto-orange: #FF6B35;      /* Laranja icônico do Naruto */
+    --naruto-blue: #1B3A5C;        /* Azul escuro ninja */
+    --naruto-dark: #0d1b2a;        /* Fundo */
+    --card-bg: #ffffff;
+    --text-dark: #2d2d2d;
+    --text-muted: #6b6b6b;
+    --shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    background: linear-gradient(180deg, var(--naruto-blue) 0%, var(--naruto-dark) 100%);
+    background-attachment: fixed;
+    color: var(--text-dark);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========== CABEÇALHO ========== */
+.header {
+    background: var(--naruto-orange);
+    padding: 2.5rem 1rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 6px solid var(--naruto-dark);
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    font-family: 'Bangers', cursive;
+    font-size: 4.5rem;
+    letter-spacing: 5px;
+    color: var(--naruto-dark);
+    text-shadow: 3px 3px 0 rgba(255,255,255,0.4);
+    line-height: 1.1;
+}
+
+.logo span {
+    color: #ffffff;
+    text-shadow: 3px 3px 0 var(--naruto-dark);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--naruto-dark);
+    margin-top: 0.5rem;
+}
+
+/* ========== CONTROLES ========== */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    gap: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.search-box {
+    display: flex;
+    gap: 0.5rem;
+    flex: 1;
+    max-width: 500px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 0.9rem 1.2rem;
+    border: 3px solid var(--naruto-dark);
+    border-radius: 12px;
+    background: white;
+    font-size: 1rem;
+    font-family: 'Nunito', sans-serif;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.search-box input:focus {
+    border-color: var(--naruto-orange);
+}
+
+.search-box button {
+    padding: 0.9rem 1.3rem;
+    background: var(--naruto-orange);
+    border: 3px solid var(--naruto-dark);
+    border-radius: 12px;
+    color: white;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: transform 0.1s, background 0.3s;
+}
+
+.search-box button:hover {
+    background: #e55a2b;
+    transform: scale(1.05);
+}
+
+.pagination-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: rgba(255,255,255,0.95);
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    border: 3px solid var(--naruto-dark);
+}
+
+.page-btn {
+    padding: 0.6rem 1.2rem;
+    background: var(--naruto-orange);
+    border: 2px solid var(--naruto-dark);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 800;
+    font-family: 'Nunito', sans-serif;
+    transition: all 0.2s;
+}
+
+.page-btn:hover:not(:disabled) {
+    background: #e55a2b;
+    transform: scale(1.05);
+}
+
+.page-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+#page-indicator {
+    font-weight: 800;
+    color: var(--naruto-dark);
+    min-width: 100px;
+    text-align: center;
+}
+
+/* ========== GRID ========== */
+.characters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+    flex: 1;
+}
+
+/* ========== CARD ========== */
+.character-card {
+    background: var(--card-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    border: 3px solid var(--naruto-dark);
+    position: relative;
+}
+
+.character-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(255, 107, 53, 0.4);
+    border-color: var(--naruto-orange);
+}
+
+.card-heart {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    font-size: 1.8rem;
+    color: #e74c3c;
+    z-index: 2;
+    cursor: pointer;
+    transition: transform 0.2s;
+    text-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+.card-heart:hover {
+    transform: scale(1.3);
+}
+
+.card-image {
+    width: 100%;
+    height: 280px;
+    object-fit: contain;
+    background: linear-gradient(135deg, #f0f0f0 0%, #e0e0e0 100%);
+    padding: 1rem;
+    display: block;
+    border-bottom: 3px solid var(--naruto-dark);
+}
+
+.card-content {
+    padding: 1.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    flex: 1;
+}
+
+.card-name {
+    font-family: 'Bangers', cursive;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    color: var(--naruto-dark);
+    line-height: 1.2;
+}
+
+.card-description {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.card-jutsu {
+    font-size: 0.85rem;
+    color: var(--naruto-orange);
+    font-weight: 700;
+    background: #fff5f0;
+    padding: 0.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--naruto-orange);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ========== ESTADOS ========== */
+.hidden { display: none !important; }
+
+.loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 100;
+    background: white;
+    padding: 2rem 3rem;
+    border-radius: 16px;
+    border: 4px solid var(--naruto-orange);
+    box-shadow: var(--shadow);
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f0f0f0;
+    border-top: 5px solid var(--naruto-orange);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.error-message {
+    background: #ffe6e6;
+    border: 3px solid #e74c3c;
+    color: #c0392b;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    margin: 2rem auto;
+    max-width: 600px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.empty-message {
+    text-align: center;
+    padding: 3rem;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--naruto-dark);
+    background: rgba(255,255,255,0.95);
+    border-radius: 16px;
+    margin: 2rem auto;
+    max-width: 600px;
+}
+
+/* ========== RODAPÉ ========== */
+.footer {
+    background: var(--naruto-dark);
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.85rem;
+    color: #aaa;
+    border-top: 4px solid var(--naruto-orange);
+    margin-top: auto;
+}
+
+.footer a {
+    color: var(--naruto-orange);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.footer a:hover { text-decoration: underline; }
+
+/* ========== RESPONSIVIDADE ========== */
+@media (max-width: 768px) {
+    .logo { font-size: 3rem; }
+    .controls { flex-direction: column; align-items: stretch; padding: 1rem; }
+    .search-box { max-width: 100%; }
+    .pagination-info { justify-content: center; }
+    .characters-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1.2rem;
+        padding: 1rem;
+    }
+    .card-image { height: 200px; }
+    .card-name { font-size: 1.5rem; }
+}
