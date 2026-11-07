@@ -25,17 +25,50 @@
         <p>Personagens do desenho que marcou os anos 2000</p>
     </header>
 
-    <!-- Área principal onde os cards serão inseridos dinamicamente pelo JavaScript -->
-    <main id="container-cards" class="container-cards">
-        <!-- Os cards NÃO são escritos aqui no HTML. 
-             Eles serão criados via JavaScript conforme exigência do trabalho. -->
+    <!-- Área principal da página -->
+    <main class="conteudo-principal">
+
+        <!-- ============================================
+             BARRA DE BUSCA
+             Permite localizar personagens pelo nome.
+             ============================================ -->
+        <section class="barra-busca">
+            <!-- Campo de texto para digitar o nome do personagem -->
+            <input type="text" id="input-busca" placeholder="Buscar personagem pelo nome...">
+            <!-- Botão que dispara a busca -->
+            <button id="btn-buscar">Buscar</button>
+            <!-- Botão que limpa o filtro e volta à listagem completa -->
+            <button id="btn-limpar">Limpar</button>
+        </section>
+
+        <!-- ============================================
+             CONTAINER DE CARDS
+             Os cards NÃO são escritos aqui no HTML.
+             Eles são criados dinamicamente via JavaScript.
+             ============================================ -->
+        <div id="container-cards" class="container-cards"></div>
+
+        <!-- ============================================
+             CONTROLES DE PAGINAÇÃO
+             Permitem navegar entre as páginas da API.
+             ============================================ -->
+        <section class="paginacao">
+            <!-- Botão para voltar uma página -->
+            <button id="btn-anterior" disabled>Anterior</button>
+            <!-- Texto que mostra a página atual e o total -->
+            <span id="info-pagina">Página 1</span>
+            <!-- Botão para avançar uma página -->
+            <button id="btn-proximo">Próxima</button>
+        </section>
+
     </main>
 
     <!-- Rodapé com créditos -->
     <footer class="footer">
         <!-- Texto de rodapé -->
         <p>Projeto acadêmico — UniFECAF — Consumo da API Rick and Morty</p>
-        <p>Desenvolvido por Wellington Diego —2026—</p>
+        <p>Desenvolvido por Wellington Diego</p>
+        <p>2026</p>
     </footer>
 
     <!-- Vincula o arquivo JavaScript ao final do body para garantir que o DOM já esteja carregado -->

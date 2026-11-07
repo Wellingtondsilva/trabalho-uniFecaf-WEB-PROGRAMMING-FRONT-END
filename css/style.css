@@ -1,3 +1,7 @@
+/* ============================================================
+   RESET E CONFIGURAÇÕES GLOBAIS
+   ============================================================ */
+
 /* Remove margens e paddings padrão de todos os elementos */
 * {
     margin: 0;                          /* Remove margem externa padrão */
@@ -13,7 +17,10 @@ body {
     min-height: 100vh;                      /* Garante altura mínima de toda a tela */
 }
 
-/* Estiliza o cabeçalho */
+/* ============================================================
+   CABEÇALHO
+   ============================================================ */
+
 .header {
     text-align: center;                     /* Centraliza o texto */
     padding: 40px 20px 20px;                /* Espaçamento interno: topo, laterais, base */
@@ -21,7 +28,6 @@ body {
     border-bottom: 3px solid #00b4d8;       /* Linha decorativa inferior azul */
 }
 
-/* Estiliza o título principal do cabeçalho */
 .header h1 {
     font-size: 2.5rem;                      /* Tamanho grande para destaque */
     color: #00b4d8;                         /* Cor azul clara inspirada no portal */
@@ -29,14 +35,84 @@ body {
     text-transform: uppercase;              /* Transforma texto em maiúsculas */
 }
 
-/* Estiliza o subtítulo */
 .header p {
     font-size: 1rem;                        /* Tamanho legível */
     color: #a0a0a0;                         /* Cinza claro */
     margin-top: 8px;                        /* Espaço acima do subtítulo */
 }
 
-/* Container que organiza os cards em grade */
+/* ============================================================
+   CONTAINER PRINCIPAL
+   ============================================================ */
+
+.conteudo-principal {
+    padding-bottom: 40px;                   /* Espaço extra na base antes do rodapé */
+}
+
+/* ============================================================
+   BARRA DE BUSCA
+   ============================================================ */
+
+.barra-busca {
+    display: flex;                          /* Organiza os itens em linha */
+    justify-content: center;                /* Centraliza horizontalmente */
+    align-items: center;                    /* Alinha verticalmente */
+    gap: 12px;                              /* Espaço entre os elementos */
+    padding: 30px 20px 10px;                /* Espaçamento interno */
+    flex-wrap: wrap;                        /* Permite quebrar linha em telas pequenas */
+}
+
+.barra-busca input {
+    padding: 12px 16px;                     /* Espaçamento interno do campo */
+    border-radius: 8px;                     /* Bordas arredondadas */
+    border: 2px solid #0f3460;              /* Borda azul escura */
+    background-color: #16213e;              /* Fundo escuro */
+    color: #e0e0e0;                         /* Texto claro */
+    font-family: inherit;                   /* Usa a mesma fonte do body */
+    font-size: 1rem;                        /* Tamanho legível */
+    width: 300px;                           /* Largura fixa */
+    max-width: 100%;                        /* Não ultrapassa a tela */
+    outline: none;                          /* Remove contorno padrão ao focar */
+    transition: border-color 0.3s ease;     /* Transição suave na borda */
+}
+
+.barra-busca input:focus {
+    border-color: #00b4d8;                  /* Muda a cor da borda ao focar */
+}
+
+.barra-busca button {
+    padding: 12px 24px;                     /* Espaçamento interno */
+    border-radius: 8px;                     /* Bordas arredondadas */
+    border: none;                           /* Remove borda padrão */
+    background-color: #00b4d8;              /* Fundo azul claro */
+    color: #1a1a2e;                         /* Texto escuro para contraste */
+    font-family: inherit;                   /* Mesma fonte */
+    font-size: 1rem;                        /* Tamanho legível */
+    font-weight: 600;                       /* Semi-negrito */
+    cursor: pointer;                        /* Muda o cursor para indicar clique */
+    transition: background-color 0.3s ease; /* Transição suave de cor */
+}
+
+.barra-busca button:hover {
+    background-color: #48cae4;              /* Cor mais clara ao passar o mouse */
+}
+
+/* Botão "Limpar" com estilo diferente (secundário) */
+#btn-limpar {
+    background-color: transparent;          /* Fundo transparente */
+    border: 2px solid #00b4d8;              /* Borda azul */
+    color: #00b4d8;                         /* Texto azul */
+}
+
+#btn-limpar:hover {
+    background-color: #00b4d8;              /* Fundo azul ao passar o mouse */
+    color: #1a1a2e;                         /* Texto escuro */
+}
+
+/* ============================================================
+   CONTAINER DE CARDS
+   ============================================================ */
+
 .container-cards {
     display: grid;                          /* Usa layout de grade CSS */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));  /* Colunas responsivas: mínimo 280px, máximo flexível */
@@ -46,7 +122,10 @@ body {
     margin: 0 auto;                         /* Centraliza o container horizontalmente */
 }
 
-/* Estilo base de cada card de personagem */
+/* ============================================================
+   CARD DE PERSONAGEM
+   ============================================================ */
+
 .card {
     background-color: #16213e;              /* Fundo do card em tom azul escuro */
     border-radius: 16px;                    /* Bordas arredondadas */
@@ -57,13 +136,11 @@ body {
     border: 1px solid #0f3460;              /* Borda sutil */
 }
 
-/* Efeito ao passar o mouse sobre o card */
 .card:hover {
     transform: translateY(-8px);            /* Eleva o card levemente */
     box-shadow: 0 8px 25px rgba(0, 180, 216, 0.3);  /* Sombra azulada mais intensa */
 }
 
-/* Estiliza o nome do personagem dentro do card */
 .card h2 {
     font-size: 1.2rem;                      /* Tamanho do nome */
     color: #00b4d8;                         /* Azul claro */
@@ -74,7 +151,6 @@ body {
     justify-content: center;                /* Centraliza horizontalmente */
 }
 
-/* Estiliza a imagem do personagem */
 .card img {
     width: 100%;                            /* Ocupa toda a largura disponível do card */
     max-width: 200px;                       /* Largura máxima de 200px */
@@ -85,7 +161,6 @@ body {
     object-fit: cover;                      /* Garante que a imagem preencha o círculo sem distorcer */
 }
 
-/* Estiliza os parágrafos de informação dentro do card */
 .card p {
     font-size: 0.9rem;                      /* Tamanho menor para detalhes */
     color: #b0b0b0;                         /* Cinza claro */
@@ -93,13 +168,75 @@ body {
     line-height: 1.4;                       /* Melhora legibilidade */
 }
 
-/* Destaca o status do personagem */
 .card .status {
     font-weight: 700;                       /* Negrito */
     color: #e94560;                         /* Cor vermelha/rosa para destaque */
 }
 
-/* Estiliza o rodapé */
+/* ============================================================
+   PAGINAÇÃO
+   ============================================================ */
+
+.paginacao {
+    display: flex;                          /* Itens em linha */
+    justify-content: center;                /* Centralizado */
+    align-items: center;                    /* Alinhamento vertical */
+    gap: 20px;                              /* Espaço entre os elementos */
+    padding: 20px;                          /* Espaçamento interno */
+}
+
+.paginacao button {
+    padding: 10px 20px;                     /* Espaçamento interno */
+    border-radius: 8px;                     /* Bordas arredondadas */
+    border: 2px solid #00b4d8;              /* Borda azul */
+    background-color: transparent;          /* Fundo transparente */
+    color: #00b4d8;                         /* Texto azul */
+    font-family: inherit;                   /* Mesma fonte */
+    font-size: 0.95rem;                     /* Tamanho legível */
+    font-weight: 600;                       /* Semi-negrito */
+    cursor: pointer;                        /* Cursor de clique */
+    transition: all 0.3s ease;              /* Transição suave */
+}
+
+.paginacao button:hover:not(:disabled) {
+    background-color: #00b4d8;              /* Fundo azul ao passar o mouse */
+    color: #1a1a2e;                         /* Texto escuro */
+}
+
+.paginacao button:disabled {
+    border-color: #444;                     /* Borda cinza quando desabilitado */
+    color: #444;                            /* Texto cinza */
+    cursor: not-allowed;                    /* Cursor indicando indisponível */
+}
+
+.paginacao span {
+    color: #a0a0a0;                         /* Cinza claro */
+    font-size: 0.95rem;                     /* Tamanho legível */
+    min-width: 150px;                       /* Largura mínima para evitar "pulos" no layout */
+    text-align: center;                     /* Centraliza o texto */
+}
+
+/* ============================================================
+   MENSAGENS DE ESTADO (carregando / erro)
+   ============================================================ */
+
+.carregando,
+.erro {
+    text-align: center;                     /* Centralizado */
+    padding: 40px;                          /* Espaçamento interno */
+    font-size: 1.1rem;                      /* Tamanho destacado */
+    color: #a0a0a0;                         /* Cinza */
+    grid-column: 1 / -1;                    /* Ocupa todas as colunas do grid */
+}
+
+.erro {
+    color: #e94560;                         /* Vermelho para erro */
+}
+
+/* ============================================================
+   RODAPÉ
+   ============================================================ */
+
 .footer {
     text-align: center;                     /* Centraliza o texto */
     padding: 30px 20px;                     /* Espaçamento interno */
@@ -109,7 +246,10 @@ body {
     margin-top: 20px;                       /* Espaço acima do rodapé */
 }
 
-/* Ajustes para telas menores (celulares) */
+/* ============================================================
+   RESPONSIVIDADE (telas pequenas)
+   ============================================================ */
+
 @media (max-width: 600px) {
     .header h1 {
         font-size: 1.8rem;                  /* Reduz o título em telas pequenas */
@@ -119,5 +259,19 @@ body {
         padding: 20px;                      /* Reduz o padding do container */
         gap: 16px;                          /* Reduz o espaço entre cards */
         grid-template-columns: 1fr;         /* Uma coluna por vez em celulares */
+    }
+
+    .barra-busca {
+        flex-direction: column;             /* Empilha os itens da busca */
+        align-items: stretch;               /* Faz os itens ocuparem a largura toda */
+    }
+
+    .barra-busca input {
+        width: 100%;                        /* Campo ocupa toda a largura */
+    }
+
+    .paginacao {
+        flex-direction: column;             /* Empilha os controles de paginação */
+        gap: 10px;                          /* Reduz o espaço entre eles */
     }
 }
