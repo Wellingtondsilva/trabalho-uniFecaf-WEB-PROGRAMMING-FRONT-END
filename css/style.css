@@ -1,0 +1,123 @@
+/* Remove margens e paddings padrão de todos os elementos */
+* {
+    margin: 0;                          /* Remove margem externa padrão */
+    padding: 0;                         /* Remove espaçamento interno padrão */
+    box-sizing: border-box;             /* Faz padding e border serem incluídos no tamanho total do elemento */
+}
+
+/* Define a fonte e cor de fundo global da página */
+body {
+    font-family: 'Montserrat', sans-serif;  /* Aplica a fonte importada */
+    background-color: #1a1a2e;              /* Cor de fundo escura com tom espacial */
+    color: #e0e0e0;                         /* Cor do texto clara para contraste */
+    min-height: 100vh;                      /* Garante altura mínima de toda a tela */
+}
+
+/* Estiliza o cabeçalho */
+.header {
+    text-align: center;                     /* Centraliza o texto */
+    padding: 40px 20px 20px;                /* Espaçamento interno: topo, laterais, base */
+    background: linear-gradient(135deg, #16213e, #0f3460);  /* Fundo com gradiente */
+    border-bottom: 3px solid #00b4d8;       /* Linha decorativa inferior azul */
+}
+
+/* Estiliza o título principal do cabeçalho */
+.header h1 {
+    font-size: 2.5rem;                      /* Tamanho grande para destaque */
+    color: #00b4d8;                         /* Cor azul clara inspirada no portal */
+    letter-spacing: 2px;                    /* Espaçamento entre letras */
+    text-transform: uppercase;              /* Transforma texto em maiúsculas */
+}
+
+/* Estiliza o subtítulo */
+.header p {
+    font-size: 1rem;                        /* Tamanho legível */
+    color: #a0a0a0;                         /* Cinza claro */
+    margin-top: 8px;                        /* Espaço acima do subtítulo */
+}
+
+/* Container que organiza os cards em grade */
+.container-cards {
+    display: grid;                          /* Usa layout de grade CSS */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));  /* Colunas responsivas: mínimo 280px, máximo flexível */
+    gap: 24px;                              /* Espaço entre os cards */
+    padding: 40px;                          /* Espaçamento interno do container */
+    max-width: 1400px;                      /* Largura máxima para não esticar demais em telas grandes */
+    margin: 0 auto;                         /* Centraliza o container horizontalmente */
+}
+
+/* Estilo base de cada card de personagem */
+.card {
+    background-color: #16213e;              /* Fundo do card em tom azul escuro */
+    border-radius: 16px;                    /* Bordas arredondadas */
+    padding: 20px;                          /* Espaçamento interno */
+    text-align: center;                     /* Centraliza o conteúdo */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);  /* Sombra para dar profundidade */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Animação suave ao passar o mouse */
+    border: 1px solid #0f3460;              /* Borda sutil */
+}
+
+/* Efeito ao passar o mouse sobre o card */
+.card:hover {
+    transform: translateY(-8px);            /* Eleva o card levemente */
+    box-shadow: 0 8px 25px rgba(0, 180, 216, 0.3);  /* Sombra azulada mais intensa */
+}
+
+/* Estiliza o nome do personagem dentro do card */
+.card h2 {
+    font-size: 1.2rem;                      /* Tamanho do nome */
+    color: #00b4d8;                         /* Azul claro */
+    margin-bottom: 12px;                    /* Espaço abaixo do nome */
+    min-height: 50px;                       /* Altura mínima para alinhar cards com nomes de tamanhos diferentes */
+    display: flex;                          /* Usa flexbox */
+    align-items: center;                    /* Centraliza verticalmente */
+    justify-content: center;                /* Centraliza horizontalmente */
+}
+
+/* Estiliza a imagem do personagem */
+.card img {
+    width: 100%;                            /* Ocupa toda a largura disponível do card */
+    max-width: 200px;                       /* Largura máxima de 200px */
+    height: auto;                           /* Altura proporcional à largura */
+    border-radius: 50%;                     /* Torna a imagem circular */
+    border: 3px solid #00b4d8;              /* Borda azul ao redor da foto */
+    margin: 10px 0;                         /* Espaçamento vertical */
+    object-fit: cover;                      /* Garante que a imagem preencha o círculo sem distorcer */
+}
+
+/* Estiliza os parágrafos de informação dentro do card */
+.card p {
+    font-size: 0.9rem;                      /* Tamanho menor para detalhes */
+    color: #b0b0b0;                         /* Cinza claro */
+    margin: 6px 0;                          /* Espaçamento vertical entre linhas */
+    line-height: 1.4;                       /* Melhora legibilidade */
+}
+
+/* Destaca o status do personagem */
+.card .status {
+    font-weight: 700;                       /* Negrito */
+    color: #e94560;                         /* Cor vermelha/rosa para destaque */
+}
+
+/* Estiliza o rodapé */
+.footer {
+    text-align: center;                     /* Centraliza o texto */
+    padding: 30px 20px;                     /* Espaçamento interno */
+    background-color: #0f3460;              /* Fundo azul escuro */
+    color: #a0a0a0;                         /* Texto cinza */
+    font-size: 0.85rem;                     /* Tamanho pequeno */
+    margin-top: 20px;                       /* Espaço acima do rodapé */
+}
+
+/* Ajustes para telas menores (celulares) */
+@media (max-width: 600px) {
+    .header h1 {
+        font-size: 1.8rem;                  /* Reduz o título em telas pequenas */
+    }
+
+    .container-cards {
+        padding: 20px;                      /* Reduz o padding do container */
+        gap: 16px;                          /* Reduz o espaço entre cards */
+        grid-template-columns: 1fr;         /* Uma coluna por vez em celulares */
+    }
+}
