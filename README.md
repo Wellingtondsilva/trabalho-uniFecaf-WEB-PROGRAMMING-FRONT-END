@@ -31,11 +31,15 @@ Aplicação front-end que consome a [Rick and Morty API](https://rickandmortyapi
 ---
 
 ## 📁 Estrutura
+
 trabalho-uniFecaf-WEB-PROGRAMMING-FRONT-END/
+│
 ├── index.html
-├── css/style.css
-├── js/script.js
-└── README.md
+├── css/
+│   └── style.css
+└── js/
+│   └── script.js
+└──README.md
 
 ---
 
@@ -45,5 +49,6 @@ SUPERIOR DE TECNOLOGIA EM ANÁLISE E DESENVOLVIMENTO DE SISTEMAS EAD — [UniFEC
 🔗 https://github.com/Wellingtondsilva
 
 
-📝 Licença
-Projeto acadêmico.
+===================================================================================================
+📜 Licença e Direitos Autorais
+Este projeto foi desenvolvido estritamente para fins acadêmicos e pedagógicos no Centro Universitário UniFECAF. Todos os direitos Rick and Morty pertence a Adult Swim / Dan Harmon e Justin Roiland.
