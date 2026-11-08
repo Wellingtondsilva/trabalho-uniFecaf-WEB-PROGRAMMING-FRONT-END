@@ -51,4 +51,5 @@ SUPERIOR DE TECNOLOGIA EM ANÁLISE E DESENVOLVIMENTO DE SISTEMAS EAD — [UniFEC
 
 ===================================================================================================
 📜 Licença e Direitos Autorais
-Este projeto foi desenvolvido estritamente para fins acadêmicos e pedagógicos no Centro Universitário UniFECAF. Todos os direitos Rick and Morty pertence a Adult Swim / Dan Harmon e Justin Roiland.
+Este projeto foi desenvolvido estritamente para fins acadêmicos e pedagógicos no Centro Universitário UniFECAF.
+Todos os direitos Rick and Morty pertence a Adult Swim / Dan Harmon e Justin Roiland.
