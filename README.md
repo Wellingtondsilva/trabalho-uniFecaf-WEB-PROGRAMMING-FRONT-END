@@ -32,14 +32,14 @@ Aplicação front-end que consome a [Rick and Morty API](https://rickandmortyapi
 
 ## 📁 Estrutura
 
+```text
 trabalho-uniFecaf-WEB-PROGRAMMING-FRONT-END/
-│
 ├── index.html
 ├── css/
 │   └── style.css
-└── js/
+├── js/
 │   └── script.js
-└──README.md
+└── README.md
 
 ---
 
